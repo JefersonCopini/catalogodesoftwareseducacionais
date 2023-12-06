@@ -4,11 +4,11 @@ import { revalidatePath } from "next/cache";
 export const revalidate =0
 
 export default async function ListCar() {
-    async function deleteCourse(formData: FormData){
+    async function deleteCar(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
         await sql`DELETE from car where id=${id}`
-        revalidatePath("/admin/course")
+        revalidatePath("/admin/car")
     }
     const { rows } = await sql`SELECT * from car`;
     return (
@@ -27,7 +27,7 @@ export default async function ListCar() {
                                 <td>
                                     <form >
                                      <input type="text" hidden name="id" value={car.id}/>   
-                                    <button formAction={deleteCourse}>Excluir</button>
+                                    <button className="text-red-700" formAction={deleteCar}>Excluir</button>
                                     </form>
                                 
                                 </td> 

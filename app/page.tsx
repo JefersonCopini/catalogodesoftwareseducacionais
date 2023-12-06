@@ -4,12 +4,14 @@ import Image from 'next/image'
 export default function Home() {
   return (
     
-    <div className="text-center ">
+    <div className="bg-[#3d3d3d]">
+      <div className="max-w-[1440px] m-auto ">
       
     <h1 className="text-center text-xl">Aplicação de carros</h1>
-    <a href="/admin/listCar">Listar Carros</a>
-    <a href="/admin/new">Cadastrar Carro</a>
-    <a href="/app/components/delete"> Excluir carro</a>
+    
+    <a className="text-center text-white text-xl" href="/admin"> CLIQUE AQUI PARA ENTRAR NO SISTEMA</a>
     </div>
+    </div>
+    
   )
 }

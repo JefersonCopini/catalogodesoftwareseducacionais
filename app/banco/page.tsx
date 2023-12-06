@@ -5,13 +5,13 @@ export default async function Cart({
 } : {
   params: { user: string }
 }): Promise<JSX.Element> {
-  const { rows } = await sql`SELECT * from courses `;
+  const { rows } = await sql`SELECT * from car `;
 
   return (
     <div>
       {rows.map((row) => (
         <div key={row.id}>
-          {row.id} - {row.title}
+          {row.id} - {row.marca}
         </div>
       ))}
     </div>

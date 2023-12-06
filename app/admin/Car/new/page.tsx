@@ -27,7 +27,7 @@ export default function NewCar({
                 <input type="text" name="modelo" placeholder="Digite o Modelo do carro"/> <br/><br/>
                 <br/>
                 
-                <button formAction={saveCar} className="text-white">Salvar</button>
+                <button  formAction={saveCar} className="text-lime-950">Salvar</button>
             </form>
             </div>
 
