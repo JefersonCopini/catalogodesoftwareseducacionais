@@ -1,17 +1,15 @@
-import Image from 'next/image'
-
+import Image from 'next/image';
+import Header from './components/Header';
+//import Banner from './components/Banner';
+import Principalpage from './components/Principalpage';
 
 export default function Home() {
   return (
-    
-    <div className="bg-[#3d3d3d]">
-      <div className="max-w-[1440px] m-auto ">
-      
-    <h1 className="text-center text-xl">Aplicação de carros</h1>
-    
-    <a className="text-center text-white text-xl" href="/admin"> CLIQUE AQUI PARA ENTRAR NO SISTEMA</a>
+    <div className="bg-[#3d3d3d] min-h-screen flex flex-col">
+      <div className="max-w-[1440px] w-full mx-auto px-4">
+        <Header />
+        <Principalpage />
+      </div>
     </div>
-    </div>
-    
-  )
+  );
 }
