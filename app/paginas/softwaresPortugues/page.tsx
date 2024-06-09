@@ -32,8 +32,9 @@ export default async function Portugues() {
 
                 </div>
                 <div className="mt-4 border-t">
+                    
                     <button className="bg-sky-500"><a href="/adcsoftwares/adcPortugues">  Deseja Adicionar um novo software a pagina clique aqui</a> </button>
-                
+                    <p>Algumas vezes pode demorar um pouco para aparecer no site</p>
                 </div>
             </footer>
         </div>
