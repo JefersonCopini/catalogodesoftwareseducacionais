@@ -16,7 +16,7 @@ export default function Header() {
             <header className="text-center text-white py-8 border-b border-[rgb(77,77,77)] md:flex items-center justify-center">
                 <div className="relative">
                   
-                <h4 className="text-center ml-16">Catálogo de Softwares educacionais</h4>
+                    <h4 className="text-center ml-16">Catálogo de Softwares educacionais</h4>
                 </div>
             </header>
         );
