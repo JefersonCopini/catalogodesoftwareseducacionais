@@ -30,7 +30,8 @@ export default async function Matematica() {
                     Esses são os softwares voltados à matemática apresentados em nosso site
                 </div>
                 <div className="mt-4 border-t">
-                    {/* Adicione mais conteúdo do rodapé, se necessário */}
+                <button className="bg-sky-500"><a href="/adcsoftwares/adcMatematica">  Deseja Adicionar um novo software a pagina clique aqui</a> </button>
+                <p>Algumas vezes pode demorar um pouco para aparecer no site</p>
                 </div>
             </footer>
         </div>

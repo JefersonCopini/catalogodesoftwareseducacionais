@@ -30,7 +30,8 @@ export default async function SalasDeAulas() {
                     Esses são os softwares voltados ás areas de Salas de aulas onlines em nosso site
                 </div>
                 <div className="mt-4 border-t">
-                    {/* Adicione mais conteúdo do rodapé, se necessário */}
+                <button className="bg-sky-500"><a href="/adcsoftwares/AdcSalasDeAula">  Deseja Adicionar um novo software a pagina clique aqui</a> </button>
+                <p>Algumas vezes pode demorar um pouco para aparecer no site</p>
                 </div>
             </footer>
         </div>

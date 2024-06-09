@@ -31,6 +31,8 @@ export default async function CienciasHumanas() {
                     Esses são os softwares voltados ás areas de Ciências humanas apresentados em nosso site
                 </div>
                 <div className="mt-4 border-t">
+                <button className="bg-sky-500"><a href="/adcsoftwares/adcSoftwaresCienciasHumanas">  Deseja Adicionar um novo software a pagina clique aqui</a> </button>
+                <p>Algumas vezes pode demorar um pouco para aparecer no site</p>
                     {/* Adicione mais conteúdo do rodapé, se necessário */}
                 </div>
             </footer>

@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 
 export const revalidate =0
 
-export default function NewPortugues({
+export default function NewSala({
     searchParams,
   }: {
     searchParams?: {
@@ -12,12 +12,12 @@ export default function NewPortugues({
     
     const urlImage = searchParams?.url || '';
 
-    async function savePortugues(formData: FormData){
+    async function saveSalasdeAula(formData: FormData){
         "use server"
         const nome = formData.get("nome") as string;
         const descricao = formData.get("descricao") as string;
         const link = formData.get("link") as string;
-        await sql`INSERT INTO softwaresportugues (nome,descricao,link) VALUES(${nome}, ${descricao}, ${link})`
+        await sql`INSERT INTO softwaressalasdeaula (nome,descricao,link) VALUES(${nome}, ${descricao}, ${link})`
         console.log("Acessou a função")
     }
     return (
@@ -29,11 +29,12 @@ export default function NewPortugues({
                 <input type="text" name="link" placeholder="Insira o link de acesso"/> <br></br>
                 <br/>
                 
-                <button  formAction={savePortugues} className="text-lime-950">Salvar</button>
+                <button  formAction={saveSalasdeAula} className="text-lime-950">Salvar</button>
                  <a className="text-lime-950" href="/paginas/softwaresPortugues">  Voltar</a>
             </form>
-
-           <p> Não se assuste após clicar sem salvar os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site</p>
+            <p> Ao clicar em salvar os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site não precisa fazer reenvio
+            </p>
+           
             </div>
 
     )
