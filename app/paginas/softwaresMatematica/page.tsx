@@ -4,7 +4,7 @@ export default async function Matematica() {
     const { rows } = await sql`SELECT * FROM softwaresMatematica`;
 
     return (
-        <main className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <main className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 bg-[#4d4d4d]">
             <div className="md:col-span-2 lg:col-span-3 mt-4 text-white text-center">
                 <h2 id="matematica">
                     CONHEÇA OS SOFTWARES EDUCACIONAIS VOLTADOS À MATEMÁTICA
