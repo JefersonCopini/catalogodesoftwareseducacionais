@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 
 export default async function Portugues() {
-    const { rows } = await sql`SELECT * FROM softwaresPortugues`;
+    const { rows } = await sql`SELECT * FROM softwaresportugues`;
 
     return (
         <div className="flex flex-col min-h-screen bg-[#4d4d4d]">
@@ -12,13 +12,13 @@ export default async function Portugues() {
                         CONHEÇA OS SOFTWARES EDUCACIONAIS VOLTADOS Á LINGUA PORTUGUESA
                     </h2>
                 </div>
-                {rows.map((softwaresPortugues) => (
-                    <div key={softwaresPortugues.nome} className="bg-[#6B7280] rounded-md pb-2">
+                {rows.map((softwaresportugues) => (
+                    <div key={softwaresportugues.nome} className="bg-[#6B7280] rounded-md pb-2">
                         <div className="text-white text-center">
-                            <h3>{softwaresPortugues.nome}</h3>
-                            <p>{softwaresPortugues.descricao}</p>
-                            {softwaresPortugues.link && (
-                                <a href={softwaresPortugues.link} className="text-blue-400 underline">
+                            <h3> {softwaresportugues.nome}</h3>
+                            <p> {softwaresportugues.descricao}</p>
+                            {softwaresportugues.link && (
+                                <a href={softwaresportugues.link} className="text-blue-400 underline">
                                     Saiba mais
                                 </a>
                             )}
@@ -32,7 +32,8 @@ export default async function Portugues() {
 
                 </div>
                 <div className="mt-4 border-t">
-                <a href="/adcsoftwares/adcPortugues">  Deseja Adicionar um novo software a pagina clique aqui</a>
+                    <button className="bg-sky-500"><a href="/adcsoftwares/adcPortugues">  Deseja Adicionar um novo software a pagina clique aqui</a> </button>
+                
                 </div>
             </footer>
         </div>
