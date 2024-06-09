@@ -12,7 +12,7 @@ export default async function Matematica() {
                     </h2>
                 </div>
                 {rows.map((softwaresmatematica) => (
-                    <div key={softwaresmatematica.nome} className="bg-[#4d4d4d] rounded-md pb-2">
+                    <div key={softwaresmatematica.nome} className="bg-[#6B7280] rounded-md pb-2">
                         <div className="text-white text-center">
                             <h3>{softwaresmatematica.nome}</h3>
                             <p>{softwaresmatematica.descricao}</p>
