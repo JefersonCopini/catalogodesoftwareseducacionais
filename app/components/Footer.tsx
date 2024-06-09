@@ -6,7 +6,7 @@ export default function Footer(){
                 Com o intuito de reunir diversos softwares educacionais que possam auxiliar no processo de ensino-aprendizagem.
             </div>
             <div className="text-center text-white mt-8 border-t text-sm">
-                Este site é feito de modo colaborativo. Caso queira adicionar um software educacional no site, entre na página da sua respectiva categoria e aparecerá uma janela pop-up com um botão para fazer adição. Lembrando que se seu software adicionado não servir na área educacional, ele poderá ser retirado do sistema.
+                Este site é feito de modo colaborativo. Caso queira adicionar um software educacional no site, entre na página da sua respectiva categoria e no rodapé da pagina tem um link para fazer adição. Lembrando que se seu software adicionado não servir na área educacional, ele poderá ser retirado do sistema.
             </div>
         </footer>
     )
