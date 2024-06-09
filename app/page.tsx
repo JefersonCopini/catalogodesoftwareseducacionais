@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Header from './components/Header';
 //import Banner from './components/Banner';
 import Principalpage from './components/Principalpage';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="max-w-[1440px] w-full mx-auto px-4">
         <Header />
         <Principalpage />
+        <Footer />
       </div>
     </div>
   );
