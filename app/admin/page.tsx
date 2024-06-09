@@ -4,6 +4,7 @@ export default function Admin(){
         <h1 className="text-center text-xl">Área Administrativa</h1>
         <a href="/admin/Car">Listar Carros</a>
         <a href="/admin/Car/new">Cadastrar Carros</a>
+        <a href="/admin/Softwares">Teste </a>
         
 
     
