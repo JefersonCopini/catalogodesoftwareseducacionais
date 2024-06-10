@@ -7,7 +7,7 @@ export default function AdminLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className="max-w-[1024px] m-auto">
+        <div className="max-w-[1024px] m-auto bg-[#3F6212]">
             <NavBar />
             <div className="flex">
                 <Aside />
