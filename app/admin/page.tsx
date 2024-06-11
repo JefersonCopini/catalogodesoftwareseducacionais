@@ -1,16 +1,16 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 export default function Admin() {
     const [password, setPassword] = useState('');
     const [authenticated, setAuthenticated] = useState(false);
     const correctPassword = '123456'; // Defina a senha correta aqui
 
-    const handlePasswordChange = (event) => {
+    const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (password === correctPassword) {
             setAuthenticated(true);
