@@ -9,6 +9,8 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
   const [message, setMessage] = useState('');
   const urlImage = searchParams?.url || '';
 
+  console.log('POSTGRES_URL:', process.env.POSTGRES_URL); // Verifique se a variável está sendo carregada corretamente
+
   async function saveMatematica(formData: FormData) {
     const nome = formData.get("nome") as string;
     const descricao = formData.get("descricao") as string;
@@ -43,7 +45,7 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
           const formData = new FormData(form);
           await saveMatematica(formData);
         }} className="text-lime-950">Salvar</button>
-        <a className="text-lime-950" href="/paginas/softwaresCiencia">Voltar</a>
+        <a className="text-lime-950" href="/paginas/softwaresMatematica">Voltar</a>
       </form>
       {message && <p>{message}</p>}
       <p>Não se assuste após clicar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site.</p>
