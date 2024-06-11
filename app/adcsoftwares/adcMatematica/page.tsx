@@ -22,6 +22,7 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
     try {
       await sql`INSERT INTO softwaresmatematica (nome, descricao, link) VALUES (${nome}, ${descricao}, ${link})`;
       setMessage('Software adicionado com sucesso ao banco de dados!');
+      console.log('Software adicionado:', { nome, descricao, link });
     } catch (error) {
       setMessage('Ocorreu um erro ao adicionar o software.');
       console.error("Erro ao salvar no banco de dados: ", error);
@@ -42,7 +43,7 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
           const formData = new FormData(form);
           await saveMatematica(formData);
         }} className="text-lime-950">Salvar</button>
-        <a className="text-lime-950" href="/paginas/softwaresMatematica">Voltar</a>
+        <a className="text-lime-950" href="/paginas/softwaresCiencia">Voltar</a>
       </form>
       {message && <p>{message}</p>}
       <p>Não se assuste após clicar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site.</p>
