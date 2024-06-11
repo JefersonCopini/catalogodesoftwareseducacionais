@@ -8,9 +8,9 @@ export default function AdminLayout({
 }) {
     return (
         <div className="max-w-[1024px] m-auto bg-[#3F6212]">
-            <NavBar />
+            
             <div className="flex">
-                <Aside />
+               
                 <div className="p-12 w-screen">
                 {children}
                 </div>

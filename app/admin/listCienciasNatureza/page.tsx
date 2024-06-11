@@ -7,7 +7,7 @@ export default async function ListCienciasNa() {
     async function deleteCNat(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
-        await sql`DELETE from car where id=${id}`
+        await sql`DELETE from softwaresciencias where id=${id}`
         revalidatePath("/admin/listCienciasNatureza")
     }
     const { rows } = await sql`SELECT * from softwaresciencia`;

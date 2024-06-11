@@ -7,7 +7,7 @@ export default async function ListCienciasHu() {
     async function deleteCHuman(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
-        await sql`DELETE from car where id=${id}`
+        await sql`DELETE from softwarescienciashumanas where id=${id}`
         revalidatePath("/admin/listCienciasHumanas")
     }
     const { rows } = await sql`SELECT * from softwarescienciashumanas`;

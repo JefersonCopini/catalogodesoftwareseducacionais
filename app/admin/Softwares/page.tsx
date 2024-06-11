@@ -7,7 +7,7 @@ export default async function ListSoftwares() {
     async function deleteSoftwares(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
-        await sql`DELETE from softwaresPortugues where id=${id}`
+        await sql`DELETE from softwaresportugues where id=${id}`
         revalidatePath("/admin/softwares")
     }
     const { rows } = await sql`SELECT * from softwaresportugues`;

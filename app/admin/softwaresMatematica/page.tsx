@@ -7,7 +7,7 @@ export default async function ListMat() {
     async function deleteMat(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
-        await sql`DELETE from car where id=${id}`
+        await sql`DELETE from softwaresmatematica where id=${id}`
         revalidatePath("/admin/softwaresMatematica")
     }
     const { rows } = await sql`SELECT * from softwaresmatematica`;

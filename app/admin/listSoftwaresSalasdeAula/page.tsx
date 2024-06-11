@@ -7,7 +7,7 @@ export default async function ListSalas() {
     async function deleteSalas(formData: FormData){
         "use server"
         const id = formData.get("id") as string;
-        await sql`DELETE from car where id=${id}`
+        await sql`DELETE from softwaressalasdeaula where id=${id}`
         revalidatePath("/admin/ListSoftwaresSalasdeAula")
     }
     const { rows } = await sql`SELECT * from softwaressalasdeaula`;

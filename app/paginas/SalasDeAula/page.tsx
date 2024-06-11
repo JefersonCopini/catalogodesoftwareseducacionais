@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 
 export default async function SalasDeAulas() {
-    const { rows } = await sql`SELECT * FROM softwaresSalasDeAula`;
+    const { rows } = await sql`SELECT * FROM softwaressalasdeaula`;
 
     return (
         <div className="flex flex-col min-h-screen bg-[#4d4d4d]">
@@ -11,13 +11,13 @@ export default async function SalasDeAulas() {
                         CONHEÇA OS SOFTWARES EDUCACIONAIS VOLTADOS ÁS SALAS DE AULAS ONLINE
                     </h2>
                 </div>
-                {rows.map((softwaresSalasDeAula) => (
-                    <div key={softwaresSalasDeAula.nome} className="bg-[#6B7280] rounded-md pb-2">
+                {rows.map((softwaressalasdeaula) => (
+                    <div key={softwaressalasdeaula.nome} className="bg-[#6B7280] rounded-md pb-2">
                         <div className="text-white text-center">
-                            <h3>{softwaresSalasDeAula.nome}</h3>
-                            <p>{softwaresSalasDeAula.descricao}</p>
-                            {softwaresSalasDeAula.link && (
-                                <a href={softwaresSalasDeAula.link} className="text-blue-400 underline">
+                            <h3>{softwaressalasdeaula.nome}</h3>
+                            <p>{softwaressalasdeaula.descricao}</p>
+                            {softwaressalasdeaula.link && (
+                                <a href={softwaressalasdeaula.link} className="text-blue-400 underline">
                                     Saiba mais
                                 </a>
                             )}

@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 
 export default async function CienciasHumanas() {
-    const { rows } = await sql`SELECT * FROM softwaresCienciasHumanas`;
+    const { rows } = await sql`SELECT * FROM softwarescienciashumanas`;
 
     return (
         <div className="flex flex-col min-h-screen bg-[#4d4d4d]">
@@ -12,13 +12,13 @@ export default async function CienciasHumanas() {
                         CONHEÇA OS SOFTWARES EDUCACIONAIS VOLTADOS AS AREAS DAS CIÊNCIAS HUMANAS
                     </h2>
                 </div>
-                {rows.map((softwaresCienciasHumanas) => (
-                    <div key={softwaresCienciasHumanas.nome} className="bg-[#6B7280] rounded-md pb-2">
+                {rows.map((softwarescienciashumanas) => (
+                    <div key={softwarescienciashumanas.nome} className="bg-[#6B7280] rounded-md pb-2">
                         <div className="text-white text-center">
-                            <h3>{softwaresCienciasHumanas.nome}</h3>
-                            <p>{softwaresCienciasHumanas.descricao}</p>
-                            {softwaresCienciasHumanas.link && (
-                                <a href={softwaresCienciasHumanas.link} className="text-blue-400 underline">
+                            <h3>{softwarescienciashumanas.nome}</h3>
+                            <p>{softwarescienciashumanas.descricao}</p>
+                            {softwarescienciashumanas.link && (
+                                <a href={softwarescienciashumanas.link} className="text-blue-400 underline">
                                     Saiba mais
                                 </a>
                             )}
