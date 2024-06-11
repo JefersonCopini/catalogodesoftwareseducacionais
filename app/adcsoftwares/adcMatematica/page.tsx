@@ -31,14 +31,15 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
   return (
     <div>
       <h1 className="text-white text-center text-4xl">Cadastrar softwares</h1>
-      <form>
+      <form id="matematicaForm">
         <input type="text" name="nome" placeholder="Digite o nome do software" required /><br /><br />
         <input type="text" name="descricao" placeholder="Descricao do software" required /><br /><br />
         <input type="text" name="link" placeholder="Insira o link de acesso" required /><br /><br />
 
         <button type="button" onClick={async (event) => {
           event.preventDefault();
-          const formData = new FormData(event.target.form);
+          const form = document.getElementById('matematicaForm') as HTMLFormElement;
+          const formData = new FormData(form);
           await saveMatematica(formData);
         }} className="text-lime-950">Salvar</button>
         <a className="text-lime-950" href="/paginas/softwaresMatematica">Voltar</a>
