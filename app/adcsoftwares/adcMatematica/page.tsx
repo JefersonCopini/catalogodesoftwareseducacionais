@@ -1,54 +1,44 @@
-"use client"; // Adicione esta linha para indicar que este é um Client Component
-
 import { sql } from "@vercel/postgres";
-import { useState } from "react";
+import { revalidatePath } from "next/cache";
 
-export const revalidate = 0;
+export const revalidate =0
 
-export default function NewMatematica({ searchParams }: { searchParams?: { url?: string } }) {
-  const [message, setMessage] = useState('');
-  const urlImage = searchParams?.url || '';
-
-  console.log('POSTGRES_URL:postgres://default:IYLkN0T9DPOb@ep-bold-shape-06113792-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require', process.env.POSTGRES_URL); // Verifique se a variável está sendo carregada corretamente
-
-  async function saveMatematica(formData: FormData) {
-    const nome = formData.get("nome") as string;
-    const descricao = formData.get("descricao") as string;
-    const link = formData.get("link") as string;
-
-    if (!nome || !descricao || !link) {
-      setMessage('Todos os campos são obrigatórios.');
-      return;
+export default async function ListMat() {
+    async function deleteMat(formData: FormData){
+        "use server"
+        const id = formData.get("id") as string;
+        await sql`DELETE from car where id=${id}`
+        revalidatePath("/admin/softwaresMatematica")
     }
+    const { rows } = await sql`SELECT * from softwaresmatematica`;
+    return (
+        <div>
+            <h1 className="text-center text-white">Lista de softwares</h1>
 
-    try {
-      await sql`INSERT INTO softwaresmatematica (nome, descricao, link) VALUES (${nome}, ${descricao}, ${link})`;
-      setMessage('Software adicionado com sucesso ao banco de dados!');
-      console.log('Software adicionado:', { nome, descricao, link });
-    } catch (error) {
-      setMessage('Ocorreu um erro ao adicionar o software.');
-      console.error("Erro ao salvar no banco de dados: ", error);
-    }
-  }
+            <table>
+                <thead>
+                    <tr> <td>nome </td> <td>link</td></tr>
+                </thead>
+                <tbody>
+                    {
+                        rows.map((softwaresmatematica) => {
+                            return (
+                                <tr key={softwaresmatematica.id}><td>{softwaresmatematica.descricao}</td> <td>{softwaresmatematica.link}</td> 
+                                <td>
+                                    <form >
+                                     <input type="text" hidden name="id" value={softwaresmatematica.id}/>   
+                                    <button className="text-red-700" formAction={deleteMat}>Excluir</button>
+                                    </form>
 
-  return (
-    <div>
-      <h1 className="text-white text-center text-4xl">Cadastrar softwares</h1>
-      <form id="matematicaForm">
-        <input type="text" name="nome" placeholder="Digite o nome do software" required /><br /><br />
-        <input type="text" name="descricao" placeholder="Descricao do software" required /><br /><br />
-        <input type="text" name="link" placeholder="Insira o link de acesso" required /><br /><br />
+                                </td> 
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
 
-        <button type="button" onClick={async (event) => {
-          event.preventDefault();
-          const form = document.getElementById('matematicaForm') as HTMLFormElement;
-          const formData = new FormData(form);
-          await saveMatematica(formData);
-        }} className="text-lime-950">Salvar</button>
-        <a className="text-lime-950" href="/paginas/softwaresMatematica">Voltar</a>
-      </form>
-      {message && <p>{message}</p>}
-      <p>Não se assuste após clicar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site.</p>
-    </div>
-  );
+
+        </div>
+    )
 }
