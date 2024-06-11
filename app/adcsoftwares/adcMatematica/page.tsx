@@ -9,7 +9,7 @@ export default function NewMatematica({ searchParams }: { searchParams?: { url?:
   const [message, setMessage] = useState('');
   const urlImage = searchParams?.url || '';
 
-  console.log('POSTGRES_URL:', process.env.POSTGRES_URL); // Verifique se a variável está sendo carregada corretamente
+  console.log('POSTGRES_URL:postgres://default:IYLkN0T9DPOb@ep-bold-shape-06113792-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require', process.env.POSTGRES_URL); // Verifique se a variável está sendo carregada corretamente
 
   async function saveMatematica(formData: FormData) {
     const nome = formData.get("nome") as string;
