@@ -64,7 +64,7 @@ export default function NewPortugues({
                 </div>
             </form>
             <p className="mt-4 text-gray-700">
-                Não se assuste após clicar sem salvar os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site.
+            Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio.
             </p>
         </div>
     );

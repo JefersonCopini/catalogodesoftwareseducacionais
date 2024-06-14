@@ -64,7 +64,7 @@ export default function NewSala({
                 </div>
             </form>
             <p className="mt-4 text-gray-700">
-                Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio.
+            Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio.
             </p>
         </div>
     );

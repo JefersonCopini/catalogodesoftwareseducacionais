@@ -63,7 +63,7 @@ export default function NewMatematica({
                     </a>
                 </div>
             </form>
-            <p className="mt-4 text-gray-700">Não se assuste após clicar sem salvar os dados serão salvos e enviados para o banco de dados e logo mais aparecerá no site.</p>
+            <p className="mt-4 text-gray-700">Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio</p>
         </div>
     );
 }
