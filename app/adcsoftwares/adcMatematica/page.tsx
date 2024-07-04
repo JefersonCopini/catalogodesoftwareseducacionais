@@ -19,10 +19,13 @@ export default function NewMatematica({
         const descricao = formData.get("descricao") as string;
         const link = formData.get("link") as string;
 
-        await sql`INSERT INTO softwaresmatematica (nome, descricao, link) VALUES (${nome}, ${descricao}, ${link})`;
-
-        setShowPopup(true); // Mostra o pop-up após salvar
-        setTimeout(() => setShowPopup(false), 3000); // Esconde o pop-up após 3 segundos
+        try {
+            await sql`INSERT INTO softwaresmatematica (nome, descricao, link) VALUES (${nome}, ${descricao}, ${link})`;
+            setShowPopup(true); // Mostra o pop-up após salvar
+            setTimeout(() => setShowPopup(false), 3000); // Esconde o pop-up após 3 segundos
+        } catch (error) {
+            console.error("Erro ao salvar:", error);
+        }
     }
 
     return (
