@@ -1,25 +1,20 @@
-import Aside from "../components/Aside"
-import NavBar from "../components/NavBar"
+import Aside from "../components/Aside";
+import NavBar from "../components/NavBar";
 
 export default function AdminLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode;
 }) {
-    return (
-        <div className="max-w-[1024px] m-auto bg-[#3F6212]">
-            
-            <div className="flex">
-               
-                <div className="p-12 w-screen">
-                {children}
-                </div>
-                
-
-            </div>
-
+  return (
+    <div className="bg-gray-900 text-white">
+     
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row">
+          
+          <main className="p-4 sm:p-12 flex-grow">{children}</main>
         </div>
-
-
-    )
+      </div>
+    </div>
+  );
 }

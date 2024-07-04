@@ -4,10 +4,10 @@ export default async function SalasDeAulas() {
   const { rows } = await sql`SELECT * FROM softwaressalasdeaula`;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#4d4d4d]">
+    <div className="flex flex-col min-h-screen bg-gray-100 text-white">
       <main className="flex-grow grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div className="md:col-span-2 lg:col-span-3 mt-4 text-white text-center">
-          <h2 id="matematica">
+        <div className="md:col-span-2 lg:col-span-3 mt-4 text-center">
+          <h2 id="matematica" className="text-gray-900 text-2xl font-bold">
             CONHEÇA OS SOFTWARES EDUCACIONAIS VOLTADOS ÀS SALAS DE AULAS ONLINE
           </h2>
         </div>
@@ -25,12 +25,12 @@ export default async function SalasDeAulas() {
           </div>
         ))}
       </main>
-      <footer id="rodape" className="bg-[#3d3d3d] text-white text-center py-4">
+      <footer id="rodape" className="bg-gray-800 text-white text-center py-4">
         <div className="text-xl">
           Esses são os softwares voltados às áreas de Salas de Aulas Online em nosso site
         </div>
         <div className="mt-4 border-t border-gray-600 pt-4">
-          <button className="bg-gray-700 hover:bg-gray-800 text-white py-2 px-4 rounded">
+          <button className="bg-gray-700 hover:bg-gray-900 text-white py-2 px-4 rounded">
             <a href="/adcsoftwares/AdcSalasDeAula">Deseja Adicionar um novo software à página? Clique aqui</a>
           </button>
           <p className="mt-2 text-gray-300">Algumas vezes pode demorar um pouco para aparecer no site</p>
