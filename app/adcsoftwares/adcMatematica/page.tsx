@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { useState } from "react";
 
 export const revalidate = 0;
 
@@ -10,14 +11,23 @@ export default function NewMatematica({
     };
 }) {
     const urlImage = searchParams?.url || '';
+    const [mensagem, setMensagem] = useState<string | null>(null);
 
     async function saveMatematica(formData: FormData) {
-        "use server"
         const nome = formData.get("nome") as string;
         const descricao = formData.get("descricao") as string;
         const link = formData.get("link") as string;
-        await sql`INSERT INTO softwaresmatematica (nome,descricao,link) VALUES(${nome}, ${descricao}, ${link})`
-        console.log("Acessou a função")
+
+        try {
+            await sql`INSERT INTO softwaresmatematica (nome, descricao, link) VALUES (${nome}, ${descricao}, ${link})`;
+
+            // Atualizar a mensagem de sucesso
+            setMensagem("Software adicionado com sucesso!");
+            console.log("Acessou a função");
+        } catch (error) {
+            console.error("Erro ao salvar no banco de dados:", error);
+            setMensagem("Ocorreu um erro ao salvar o software.");
+        }
     }
 
     return (
@@ -50,7 +60,11 @@ export default function NewMatematica({
                 </div>
                 <div className="flex justify-between items-center">
                     <button
-                        formAction={saveMatematica}
+                        type="button"
+                        onClick={() => {
+                            const formData = new FormData(document.querySelector('form') as HTMLFormElement);
+                            saveMatematica(formData);
+                        }}
                         className="px-4 py-2 bg-lime-950 text-white rounded-md"
                     >
                         Salvar
@@ -63,7 +77,7 @@ export default function NewMatematica({
                     </a>
                 </div>
             </form>
-            <p className="mt-4 text-gray-700">Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio</p>
+            {mensagem && <p className="mt-4 text-gray-700">{mensagem}</p>}
         </div>
     );
 }
