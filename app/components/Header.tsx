@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 
 export default function Header() {
@@ -13,10 +13,9 @@ export default function Header() {
     // Renderização do lado do cliente
     if (typeof window !== 'undefined') {
         return (
-            <header className="text-center text-white py-8 border-b border-[rgb(77,77,77)] md:flex items-center justify-center">
+            <header className="text-center text-white py-8 border-b border-[rgb(77,77,77)] md:flex items-center justify-center bg-white dark:bg-slate-800">
                 <div className="relative">
-                  
-                    <h4 className="text-center ml-16">Catálogo de Softwares educacionais</h4>
+                    <h4 className="text-center ml-16 text-black dark:text-white">Catálogo de Softwares Educacionais</h4>
                 </div>
             </header>
         );

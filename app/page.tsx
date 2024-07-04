@@ -6,10 +6,12 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="bg-[#3d3d3d] min-h-screen flex flex-col">
-      <div className="max-w-[1440px] w-full mx-auto px-4">
+    <div className="bg-white dark:bg-slate-800 min-h-screen flex flex-col">
+      <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8">
         <Header />
-        <Principalpage />
+        <main className="flex-grow">
+          <Principalpage />
+        </main>
         <Footer />
       </div>
     </div>
