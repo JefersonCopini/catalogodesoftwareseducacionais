@@ -1,10 +1,13 @@
+import Aside from "@/app/components/Aside";
+import NavBar from "@/app/components/NavBar";
 import { sql } from "@vercel/postgres";
 
 export default async function Portugues() {
     const { rows } = await sql`SELECT * FROM softwaresportugues`;
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-100">
+        <div className="flex flex-col min-h-screen bg-gray-100 text-white">
+            <NavBar />
             <main className="flex-grow grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <div className="md:col-span-2 lg:col-span-3 mt-4 text-center">
                     <h2 id="portugues" className="text-gray-900 text-2xl font-bold">
@@ -12,7 +15,7 @@ export default async function Portugues() {
                     </h2>
                 </div>
                 {rows.map((softwaresportugues) => (
-                    <div key={softwaresportugues.nome} className="bg-gray-700 rounded-md shadow-md pb-2">
+                    <div key={softwaresportugues.nome} className="bg-gray-700 rounded-md pb-2">
                         <div className="text-white text-center p-4">
                             <h3 className="text-lg font-semibold">{softwaresportugues.nome}</h3>
                             <p className="mt-2 text-gray-300">{softwaresportugues.descricao}</p>
@@ -29,7 +32,7 @@ export default async function Portugues() {
                 <div className="text-xl">
                     Esses são os softwares voltados à língua portuguesa apresentados em nosso site.
                 </div>
-                <div className="mt-4 border-t border-gray-300 pt-4">
+                <div className="mt-4 border-t border-gray-600 pt-4">
                     <button className="bg-gray-700 hover:bg-gray-900 text-white py-2 px-4 rounded">
                         <a href="/adcsoftwares/adcPortugues">Deseja Adicionar um novo software à página? Clique aqui</a>
                     </button>
