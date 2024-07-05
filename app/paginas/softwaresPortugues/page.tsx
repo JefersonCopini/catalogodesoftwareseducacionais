@@ -4,7 +4,7 @@ export default async function Portugues() {
     const { rows } = await sql`SELECT * FROM softwaresportugues`;
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-100 text-white">
+        <div className="flex flex-col min-h-screen bg-gray-100">
             <main className="flex-grow grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <div className="md:col-span-2 lg:col-span-3 mt-4 text-center">
                     <h2 id="portugues" className="text-gray-900 text-2xl font-bold">
