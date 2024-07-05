@@ -1,3 +1,4 @@
+import NavBar from "@/app/components/NavBar";
 import { sql } from "@vercel/postgres";
 
 export const revalidate = 0;
@@ -22,6 +23,7 @@ export default function NewMatematica({
 
     return (
         <div className="p-4 bg-gray-100">
+            <NavBar />
             <h1 className="text-center text-4xl text-[#09090b] mb-4">Cadastrar softwares</h1>
             <form className="space-y-4">
                 <div className="border p-4 bg-white rounded-md">
@@ -55,12 +57,7 @@ export default function NewMatematica({
                     >
                         Salvar
                     </button>
-                    <a
-                        className="px-4 py-2 bg-lime-950 text-white rounded-md"
-                        href="/paginas/softwaresMatematica"
-                    >
-                        Voltar
-                    </a>
+                    
                 </div>
             </form>
             <p className="mt-4 text-gray-700">Ao clicar em salvar, os dados serão salvos e enviados para o banco de dados e logo mais aparecerão no site. Não é necessário fazer reenvio</p>
